@@ -8,6 +8,10 @@ Version: 1.0
 Author URI: http://nttuyen.com 
 */  
 
+function rootURL(&$path){
+	return $_SERVER['SERVER_NAME'];
+}
+
 function defaultCategoryOfURL($notused){
 	global $wp_query;
   	global $gloss_category;
@@ -45,5 +49,6 @@ function templateOfURL(){
 	return $template;
 }
 
+add_filter('option_home', 'rootURL');
 add_filter('pre_get_posts', 'defaultCategoryOfURL');
 add_filter('stylesheet', 'templateOfURL');
