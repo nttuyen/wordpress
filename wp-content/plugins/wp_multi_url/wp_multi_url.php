@@ -8,8 +8,9 @@ Version: 1.0
 Author URI: http://nttuyen.com 
 */  
 
-function rootURL(&$path){
-	return $_SERVER['SERVER_NAME'];
+function rootURL($path){
+	//var_dump($path);die;
+	$path = $_SERVER['SERVER_NAME'];
 }
 
 function defaultCategoryOfURL($notused){
